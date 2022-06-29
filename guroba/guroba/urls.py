@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, include, re_path
 from guroba import settings
 from women.views import *
 
@@ -24,6 +24,9 @@ urlpatterns = [
     # path('women/', women_view),
     # path('categories/', categories_view),
     path('women/', include('women.urls')),#все пути приложения women
+    path('women/templates/home', presentHome),
+    path('women/templates/about', presentAbout),
+    #path('women/templates/about', presentAbout, presentAbout='presentAbout'),#имя пути
 ]
 
 # if settings.DEBUG:

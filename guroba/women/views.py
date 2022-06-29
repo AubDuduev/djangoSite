@@ -17,3 +17,9 @@ def categories_view(request, catid):
 
 def pageNotFound(request, exception):
     return HttpResponseNotFound("<h1> Страница не найдена </h1>")
+
+def presentHome(request):
+    return render(request, 'women/home.html')
+
+def presentAbout(request):
+    return render(request, 'women/about.html')
